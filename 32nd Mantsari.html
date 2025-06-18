@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy 32nd Monthsarry Wabbyy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to top right, #ffe0f0, #c2f0ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      z-index: 2;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      padding: 1rem 2.5rem;
+      font-size: 1.7rem;
+      background-color: #ff66a3;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background-color: #ff85b3;
+    }
+
+    .message {
+      font-size: 2.2rem;
+      color: #d6336c;
+      animation: fadeIn 2s ease-in-out;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Floral Decorations */
+    .flower {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://www.pngall.com/wp-content/uploads/5/Flower-PNG-Images.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      animation: float 12s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <button onclick="showMessage()">Hi Wabbyy</button>
+    <div class="message hidden" id="msg">
+      HAPPY 32nd MONTHSARRY WABBYY<br>
+      I LOVE YOU
+    </div>
+  </div>
+
+  <!-- Decorative floating flowers -->
+  <script>
+    for (let i = 0; i < 25; i++) {
+      const flower = document.createElement('div');
+      flower.classList.add('flower');
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.animationDelay = Math.random() * 10 + "s";
+      document.body.appendChild(flower);
+    }
+
+    function showMessage() {
+      document.querySelector('button').classList.add('hidden');
+      document.getElementById('msg').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
